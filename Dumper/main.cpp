@@ -27,11 +27,11 @@ void main(int argc, char** argv)
 
 	IMAGE_DOS_HEADER dos_header;
 	ReadProcessMemory(hProcess, (void*)process_base, &dos_header, sizeof(IMAGE_DOS_HEADER), 0);
-	printf("[+] DOS header [%p]\n", dos_header);
+	printf("[+] DOS header 0x%p\n", dos_header);
 
 	IMAGE_NT_HEADERS nt_header;
 	ReadProcessMemory(hProcess, (void*)(process_base + dos_header.e_lfanew), &nt_header, sizeof(IMAGE_NT_HEADERS), 0);
-	printf("[+] NT header [%p]\n", nt_header);
+	printf("[+] NT header 0x%p\n", nt_header);
 
 	
 	void* process_buffer = VirtualAlloc(0, nt_header.OptionalHeader.SizeOfImage, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
