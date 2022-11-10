@@ -26,4 +26,4 @@ for (uint64_t i = 0; i < image_nt_header->FileHeader.NumberOfSections; ++i, ++se
 Once that's done we can simply write our buffer that contains the fixed PE Header and the sections to a file on disk. If we open that on IDA we now get a valid executable to analyze.
 
 ## Showcase
-![image](.gif)
+![image](https://cdn.discordapp.com/attachments/780153367305256981/1040308663698587720/2022-11-10_17-50-40.gif)
